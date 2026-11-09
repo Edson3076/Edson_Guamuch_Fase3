@@ -24,7 +24,7 @@
 */
 
 /* ========================================================
-   SIDEBAR (BARRA LATERAL)
+   BARRA LATERAL
    ======================================================== */
 .sidebar {
     -fx-background-color: #0f172a;
@@ -102,7 +102,7 @@
 }
 
 /* ========================================================
-   TOPBAR (BARRA SUPERIOR)
+   BARRA SUPERIOR
    ======================================================== */
 .topbar {
     -fx-background-color: #ffffff;
@@ -141,7 +141,7 @@
 }
 
 /* ========================================================
-   TARJETAS Y PANELES (CARDS)
+   TARJETAS Y PANELES
    ======================================================== */
 .card {
     -fx-background-color: #ffffff;
@@ -275,7 +275,7 @@
 }
 
 /* ========================================================
-   CAMPOS DE TEXTO, COMBOBOX, DATEPICKER
+   CAMPOS DE TEXTO
    ======================================================== */
 .text-field, .password-field, .combo-box, .date-picker, .text-area, .spinner {
     -fx-background-color: #ffffff;
@@ -299,7 +299,7 @@
 }
 
 /* ========================================================
-   TABLAS (TABLEVIEW)
+   TABLAS
    ======================================================== */
 .table-view {
     -fx-background-color: #ffffff;
@@ -370,7 +370,7 @@
 }
 
 /* ========================================================
-   PESTAÑAS (TABPANE)
+   PESTAÑAS
    ======================================================== */
 .tab-pane .tab-header-area .tab-header-background {
     -fx-background-color: transparent;
