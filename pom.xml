@@ -60,6 +60,17 @@
 	  <version>3.1.1</version>
 	  <type>jar</type>
 	 </dependency>
+		<!-- JavaFX -->
+		<dependency>
+			<groupId>org.openjfx</groupId>
+			<artifactId>javafx-controls</artifactId>
+			<version>17.0.10</version>
+		</dependency>
+		<dependency>
+			<groupId>org.openjfx</groupId>
+			<artifactId>javafx-fxml</artifactId>
+			<version>17.0.10</version>
+		</dependency>
 	</dependencies>
 
 	<build>

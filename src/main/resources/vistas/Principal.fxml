@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="750.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.proyecto.GestionCitasExpedientes.vista.ControladorPrincipal">
+   
+   <!-- BARRA LATERAL (SIDEBAR) -->
+   <left>
+      <VBox prefWidth="240.0" spacing="12.0" styleClass="sidebar" BorderPane.alignment="CENTER">
+         <children>
+            <!-- Logo y Nombre de la Clínica -->
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label style="-fx-font-size: 26px;" text="🏥" />
+                  <VBox>
+                     <children>
+                        <Label styleClass="sidebar-brand-title" text="CLÍNICA MÉDICA" />
+                        <Label styleClass="sidebar-brand-subtitle" text="Citas &amp; Expedientes" />
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets bottom="6.0" top="6.0" />
+               </padding>
+            </HBox>
+            
+            <Separator opacity="0.15" />
+            
+            <!-- Tarjeta del Usuario Conectado -->
+            <HBox alignment="CENTER_LEFT" spacing="10.0" styleClass="sidebar-user-card">
+               <children>
+                  <Label style="-fx-font-size: 22px;" text="👤" />
+                  <VBox HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label fx:id="lblUsuarioNombre" styleClass="sidebar-user-name" text="Administrador" />
+                        <Label fx:id="lblUsuarioRol" styleClass="sidebar-user-role" text="Administrador" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            
+            <!-- Título de sección del menú -->
+            <Label style="-fx-text-fill: #64748b; -fx-font-size: 11px; -fx-font-weight: bold; -fx-padding: 8 0 2 6;" text="MÓDULOS DEL SISTEMA" />
+            
+            <!-- BOTONES DE LAS 5 PANTALLAS -->
+            <VBox spacing="6.0">
+               <children>
+                  <Button fx:id="btnNavDashboard" maxWidth="1.7976931348623157E308" onAction="#navegarADashboard" styleClass="sidebar-nav-btn" text="📊  1. Dashboard General" />
+                  <Button fx:id="btnNavPacientes" maxWidth="1.7976931348623157E308" onAction="#navegarAPacientes" styleClass="sidebar-nav-btn" text="👥  2. Pacientes &amp; Expedientes" />
+                  <Button fx:id="btnNavMedicos" maxWidth="1.7976931348623157E308" onAction="#navegarAMedicos" styleClass="sidebar-nav-btn" text="👨‍⚕️  3. Médicos &amp; Especialidades" />
+                  <Button fx:id="btnNavCitas" maxWidth="1.7976931348623157E308" onAction="#navegarACitas" styleClass="sidebar-nav-btn" text="📅  4. Agenda de Citas" />
+                  <Button fx:id="btnNavConsultas" maxWidth="1.7976931348623157E308" onAction="#navegarAConsultas" styleClass="sidebar-nav-btn" text="🩺  5. Consultas Médicas" />
+               </children>
+            </VBox>
+            
+            <Region VBox.vgrow="ALWAYS" />
+            
+            <!-- Estado de conexión -->
+            <VBox spacing="4.0" style="-fx-background-color: #1e293b; -fx-padding: 8; -fx-background-radius: 6;">
+               <children>
+                  <Label fx:id="lblEstadoBD" style="-fx-text-fill: #34d399; -fx-font-size: 11px; -fx-font-weight: bold;" text="● Base de Datos Conectada" />
+                  <Label style="-fx-text-fill: #94a3b8; -fx-font-size: 10px;" text="" /> <!--JavaFX 17 + Spring Boot-->
+               </children>
+            </VBox>
+            
+            <!-- Botón Cerrar Sesión -->
+            <Button maxWidth="1.7976931348623157E308" onAction="#handleCerrarSesion" styleClass="sidebar-logout-btn" text="🚪  Cerrar Sesión" />
+         </children>
+      </VBox>
+   </left>
+   
+   <!-- BARRA SUPERIOR (TOPBAR) -->
+   <top>
+      <HBox alignment="CENTER_LEFT" prefHeight="55.0" styleClass="topbar" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER_LEFT">
+               <children>
+                  <Label fx:id="lblTituloSeccion" styleClass="topbar-title" text="Panel de Control y Resumen General" />
+                  <Label fx:id="lblSubtituloSeccion" styleClass="topbar-subtitle" text="Métricas en tiempo real, citas del día y accesos directos" />
+               </children>
+            </VBox>
+            
+            <Region HBox.hgrow="ALWAYS" />
+            
+            <HBox alignment="CENTER" spacing="15.0">
+               <children>
+                  <Label fx:id="lblFechaHora" style="-fx-text-fill: #475569; -fx-font-size: 12px; -fx-font-weight: bold;" text="Fecha y Hora" />
+                  <Label fx:id="lblBadgeEstado" styleClass="status-badge-online" text="Sistema Listo" />
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+   </top>
+   
+   <!-- CONTENEDOR CENTRAL DINÁMICO (StackPane para las 5 pantallas) -->
+   <center>
+      <StackPane fx:id="contenedorContenido" style="-fx-background-color: #f1f5f9; -fx-padding: 16;" BorderPane.alignment="CENTER" />
+   </center>
+   
+</BorderPane>
